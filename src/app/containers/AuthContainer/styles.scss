@@ -1,0 +1,41 @@
+.loadingBar {
+  z-index: 100;
+}
+
+.titleWrapper {
+  width: 100%;
+  margin: 0px;
+  margin-top: 18px;
+  margin-bottom: 23px;
+  @media (min-width: 768px) {
+    margin-top: 38px;
+  }
+
+  .title {
+    padding-left: 0px;
+  }
+
+  .additionTitle {
+    padding-top: 5px;
+    padding-right: 0px;
+
+    @media (max-width: 992px) {
+      padding-left: 0px;
+    }
+
+    h2 {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      text-align: center;
+      @media (min-width: 768px) {
+        font-size: 24px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.contentWrapper {
+
+}

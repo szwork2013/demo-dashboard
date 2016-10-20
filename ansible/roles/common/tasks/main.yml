@@ -1,0 +1,25 @@
+---
+
+- name: Common | Install packages
+  become: yes
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time=86400
+  with_items:
+  - build-essential
+  - libssl-dev
+  - make
+  - openssl
+  - python-dev
+  - python-pip
+  - python-virtualenv
+  - python-pycurl
+  - python-setuptools
+  - ntp
+  - sudo
+
+- include: setup_ntp.yml
+
+- include: setup_user.yml
+
+- include: setup_zsh.yml
+
+- include: setup_tmux.yml

@@ -1,0 +1,13 @@
+---
+
+- name: Create the application user
+  become: yes
+  user: name={{ app_user }} state=present generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa
+
+- name: Create the application group
+  become: yes
+  group: name={{ app_user }} system=yes state=present
+
+- name: Add the application user to the application group
+  become: yes
+  user: name={{ app_user }} group={{ app_user }} state=present

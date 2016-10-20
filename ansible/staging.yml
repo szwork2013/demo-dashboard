@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  remote_user: deploy
+  gather_facts: yes
+  vars_files:
+      - vars/main.yml
+  vars:
+    - app_user: dashboard
+    - vagrant_mode: 0
+    - staging_mode: 1
+    - production_mode: 0
+    - update_apt_cache: yes
+    - nginx_app_name: stage-dashboard
+
+
+
+  roles:
+    - common
+    - predeploy
+    - deploy
+    - project
+    - nginx

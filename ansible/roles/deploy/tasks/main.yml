@@ -1,0 +1,44 @@
+---
+
+- name: Ensure projectdir permission
+  file: path=/home/{{ app_user }}/site/ state=directory owner="{{ app_user }}" recurse=yes
+  become: yes
+  tags:
+    - deploy
+
+- git: repo=git@github.com:Welltory/dashboard.git
+       dest=/home/{{ app_user }}/site/
+       version=develop
+       accept_hostkey=yes
+       force=yes
+  become: yes
+  become_user: "{{ app_user }}"
+  tags:
+    - deploy
+
+- name: Install node.js dependencies
+  shell: npm install
+  become: yes
+  become_user: "{{ app_user }}"
+  args:
+    chdir: /home/{{ app_user }}/site/
+  tags:
+    - deploy
+
+- name: Build dist
+  shell: npm run build
+  become: yes
+  become_user: "{{ app_user }}"
+  args:
+    chdir: /home/{{ app_user }}/site/
+  tags:
+    - deploy
+
+- name: Restart application
+  shell: NODE_ENV=production pm2 restart server
+  become: yes
+  become_user: "{{ app_user }}"
+  args:
+    chdir: /home/{{ app_user }}/site/
+  tags:
+    - deploy

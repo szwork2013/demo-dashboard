@@ -1,0 +1,10 @@
+---
+
+- name: Create log directory
+  file: path=/home/{{ app_user }}/logs state=directory mode=0755
+  become: yes
+  become_user: "{{ app_user }}"
+
+- name: Install PM2
+  become: yes
+  npm: name=pm2 global=yes

@@ -1,0 +1,31 @@
+.choosePeriodWrapper {
+  padding: 45px 0px 35px;
+}
+
+.choosePeriod {
+  //padding-top: 61.5px;
+  //padding-bottom: 38px;
+  padding-top: 10px;
+  padding-left: 0px;
+
+  h3 {
+    line-height: 29px;
+  }
+}
+
+.statisticChartsWrapper {
+  @media (min-width: 992px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.calendarIcon {
+  @media (min-width: 992px) and (max-width: 1200px)  {
+    display: none;
+  }
+}
+
+.dateTimeRangePicker {
+  padding-right: 0px;
+}

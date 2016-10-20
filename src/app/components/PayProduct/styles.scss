@@ -1,0 +1,237 @@
+.paymentPackage {
+  height: 100%;
+  //margin-bottom: 20px;
+}
+
+.payItemProcessTitle {
+  left: center;
+  top: center;
+  font-family: RalewayMedium;
+  font-size: 32px;
+  z-index: 100;
+}
+
+.payItem {
+  position: relative;
+  border-top: 3px solid #e64a1b!important;
+  margin-bottom: 20px;
+
+  &.payItemMore {
+    > div:last-child {
+      //padding-bottom: 30px!important;
+    }
+    > div:last-child {
+      border-top: 1px solid rgba(155, 155, 155, 0.24)!important;
+    }
+  }
+
+  &.payItemProcess {
+    filter: blur(5px);
+
+  }
+
+  > div {
+    padding-left: 26px!important;
+    padding-right: 24px!important;
+    border-top: none!important;
+  }
+
+  .payItemDescription {
+    height: 108px;
+    padding-top: 26px;
+
+    @media (max-width: 430px) {
+      height: auto;
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+      height: 190px;
+    }
+  }
+}
+
+.payItemImg {
+  position: relative;
+  max-height: 375px;
+  margin: -15px -24px 0px -26px;
+  overflow: hidden;
+  background-color: #ffffff;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  .payItemTitle {
+    width: 290px;
+    height: 80px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding: 22px 26px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: RalewayMedium;
+    font-size: 32px;
+    line-height: 47px;
+    color: #232323;
+  }
+}
+
+.payItemMethod {
+  margin-bottom: 10px;
+  font-family: RalewayMedium;
+}
+
+.payItemPrice {
+  font-family: RalewayLight;
+  font-size: 20px;
+}
+
+.payButton,
+.payButton:hover,
+.payButton:active,
+.payButton:hover:active {
+  display: block;
+  float: right;
+  padding: 9px 29px;
+  border-radius: 100px;
+  border: none;
+  font-size: 24px;
+  font-family: RalewayRegular;
+  color: #ffffff;
+  outline: none;
+  box-shadow: none;
+}
+
+.payMoreInfoButton,
+.payMoreInfoButton:hover,
+.payMoreInfoButton:active,
+.payMoreInfoButton:hover:active {
+  background-color: #e64a1b;
+}
+
+.payPaidButton,
+.payPaidButton:hover,
+.payPaidButton:active,
+.payPaidButton:hover:active {
+  background-color: #000000;
+}
+
+.payItemMoreInfoClose {
+  width: 22px;
+  height: 23px;
+  position: absolute;
+  top: 38px;
+  right: 28px;
+  cursor: pointer;
+  font-family: RalewaySemiBold;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.panelFooter {
+  padding-bottom: 10px;
+}
+
+.panelFooterPayInfo {
+  margin-bottom: 10px;
+  @media (max-width: 1078px) {
+    text-align: center;
+  }
+}
+
+.panelFooterPayButtons {
+  @media (max-width: 1078px) {
+    text-align: center;
+  }
+
+  button {
+    @media (max-width: 1085px) {
+      float: none!important;
+      margin: 0 auto;
+    }
+  }
+}
+
+.promoCodeRow {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.promoCodeInput {
+  height: 52px;
+  padding: 15px 19px 16px;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  box-shadow: none!important;
+  font-family: RalewayRegular;
+  font-size: 18px;
+  color: rgba(155, 155, 155, 0.50);
+  ::-webkit-input-placeholder {color:rgba(155, 155, 155, 0.50);}
+  ::-moz-placeholder {color:rgba(155, 155, 155, 0.50);}
+  :-moz-placeholder {color:rgba(155, 155, 155, 0.50);}
+  :-ms-input-placeholder {color:rgba(155, 155, 155, 0.50);}
+  &:hover {
+    border-color: #dbdbdb!important;
+    outline: none;
+    box-shadow: none!important;
+  }
+  &.noEmpty {
+    padding: 22px 19px 9px 16px;
+  }
+}
+
+.promoCodeInfo {
+  position: absolute;
+  top: 9px;
+  left: 18px;
+  font-family: RalewaySemiBold;
+  font-size: 10px;
+  color: #4a4a4a;
+}
+
+.promoCodeFeedback {
+  width: 22px;
+  height: 24px;
+  top: center;
+  right: 15px;
+}
+
+.payItemMoreInfoTitle {
+  padding-top: 17px;
+  margin-bottom: 25px;
+  font-family: RalewayMedium;
+  font-size: 28px;
+  line-height: 37px;
+  @media (min-width: 768px) {
+    font-size: 32px;
+  }
+}
+
+.payItemMoreInfoImg {
+  display: block;
+  margin: 0 auto 30px;
+  @media (min-width: 414px) and (max-width: 767px), (min-width: 992px) {
+    float: left;
+  }
+}
+
+.payItemMoreInfoDescription {
+  @media (min-width: 414px) and (max-width: 767px), (min-width: 992px) {
+    margin-left: 130px;
+  }
+
+  .payItemMoreInfoDescriptionTitle {
+    font-family: RalewayBold;
+    margin-bottom: 10px;
+  }
+
+  ol {
+    font-family: RalewayRegular;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}

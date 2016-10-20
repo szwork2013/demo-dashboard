@@ -1,0 +1,8 @@
+- authorized_key: user="{{ app_user }}" key="{{ item }}" state=present
+  become: yes
+  become_user: "{{ app_user }}"
+  with_file:
+    - files/lifanov.pub
+    - files/sapronov.pub
+    - files/smirnoffmg.pub
+    - files/halturin.pub

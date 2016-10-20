@@ -1,0 +1,83 @@
+.hawcons {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  background-repeat: no-repeat;
+  background-size: auto 24px;
+  vertical-align: middle;
+}
+
+.hawcons-key {
+  background-image: url("./images/hawcons/icon-25-key.svg");
+}
+
+.hawcons-lock-rounded-open {
+  background-image: url("./images/hawcons/icon-120-lock-rounded-open.svg");
+}
+
+.chart-with-icon {
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  text-indent: 35px;
+}
+
+.wellness-chart {
+  background-image: url("./images/chart/wellness.png");
+}
+
+.sleep-chart {
+  background-image: url("./images/chart/sleep.png");
+}
+
+.blood-pressure-chart {
+  background-image: url("./images/chart/blood_pressure.png");
+}
+
+.activity-chart {
+  background-image: url("./images/chart/man.png");
+}
+
+.calories-chart {
+  background-image: url("./images/chart/calory.png");
+}
+
+.how-day-chart {
+  background-image: url("./images/chart/day.png");
+}
+
+.how-day-mood-chart {
+  background-image: url("./images/chart/smile.png");
+}
+
+.how-day-sleep-chart {
+  background-image: url("./images/chart/sleep.png");
+}
+
+.how-day-feel-chart {
+  background-image: url("./images/chart/heals.png");
+}
+
+.temperature-chart {
+  background-image: url("./images/chart/sun.png");
+}
+
+.atmospheric-chart {
+  background-image: url("./images/chart/arrow.png");
+}
+
+.humidity-chart {
+  background-image: url("./images/chart/wet.png");
+}
+
+.clouds-chart {
+  background-image: url("./images/chart/cloud.png");
+}
+
+.precip-chart {
+  background-image: url("./images/chart/cloud_wet.png");
+}
+
+.co2-chart {
+  background-image: url("./images/chart/air.png");
+}

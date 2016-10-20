@@ -1,0 +1,125 @@
+.indicator {
+  position: relative;
+  //width: 259px;
+  height: 161px;
+  margin: 0 auto 21px;
+  border: 0.5px solid rgba(151, 151, 151, 0.16);
+  border-radius: 8px;
+  background-color:  #FFFFFF;
+  box-shadow: 0 1px 1px rgba(33,33,33,.08);
+  @media (min-width: 768px) {
+    margin: 0 0 21px;
+  }
+
+  .indicatorName {
+    position: absolute;
+    top: 23px;
+    left: 15px;
+    font-family: RalewayExtraLight;
+    font-size: 21px;
+    @media (min-width: 992px) and (max-width: 1200px)  {
+      font-size: 16px;
+    }
+  }
+
+  .indicatorIcon {
+    position: absolute;
+    height: 50px;
+    top: 23px;
+    right: 15px;
+    width: 35px!important;
+    background-repeat: no-repeat;
+    background-size: 35px auto;
+
+    @media (min-width: 992px) and (max-width: 1200px)  {
+      width: 30px;
+      background-size: 30px auto;
+    }
+
+    &.wellness {
+      width: 35px;
+      background-image: url("./images/wellness.svg");
+    }
+    &.productivity {
+      width: 38px;
+      background-image: url("./images/productivity.svg");
+    }
+    &.sleep {
+      width: 54px;
+      background-image: url("./images/sleep.svg");
+    }
+    &.activity {
+      width: 30px;
+      background-image: url("./images/activity.svg");
+    }
+  }
+
+  .indicatorValue {
+    position: absolute;
+    top: 62px;
+    left: 15px;
+    font-size: 48px;
+    @media (min-width: 992px) and (max-width: 1200px)  {
+      font-size: 42px;
+    }
+  }
+
+  .indicatorDiff {
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    font-family: RalewayExtraLight;
+    font-size: 18px;
+
+    @media (min-width: 992px) and (max-width: 1200px)  {
+      font-size: 14px;
+    }
+
+    &:before {
+      display: block;
+      width: 14.5px;
+      height: 8px;
+      margin-bottom: 7px;
+    }
+    &.down:before {
+      content: '';
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid rgb(230, 74, 27);
+    }
+    &.up:before {
+      content: '';
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid rgb(126, 211, 33);
+    }
+  }
+
+  .indicatorDescription {
+    position: absolute;
+    //bottom: 24px;
+    bottom: 15px;
+    left: 15px;
+    font-weight: 100;
+  }
+}
+
+.indicatorTooltip {
+  width: 262px;
+  padding: 0px!important;
+  background: #fff !important;
+  border-radius: 8px !important;
+  border: 1px solid #e94a1b !important;
+  font-family: RalewayLight;
+  font-size: 14px;
+  color: #333 !important;
+  
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+.indicatorHelp {
+  padding: 24px 20px;
+}

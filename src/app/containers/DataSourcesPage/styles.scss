@@ -1,0 +1,249 @@
+.dataSourceTabs {
+  > ul {
+    max-height: 135px;
+    overflow: hidden;
+  }
+
+  &.active {
+
+    > ul {
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    .sourcesWrapper {
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  .sourcesWrapper {
+    padding: 0px;
+  }
+}
+
+.sourceCol {
+  padding: 0px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 10px;
+  }
+
+  .sourceThumbnailWraper {
+    width: 116px;
+    //height: auto;
+  }
+}
+
+.sourceThumbnailWraper {
+  border-radius: 8px;
+
+  @media (max-width: 768px) {
+    padding-top: 17px;
+  }
+
+  @media (min-width: 768px) {
+    width: 116px;
+    //height: 145px;
+    padding: 8px 7px 0px;
+  }
+
+  &:hover,
+  &.activeSource {
+    background-color: rgba(35, 35, 35, 0.04);
+
+    .sourceName {
+      font-family: RalewayBold;
+      color: #e64a1b;
+    }
+  }
+}
+
+.source {
+  width: 94px;
+  height: 94px!important;
+  position: relative;
+  //padding-top: 8px;
+  padding: 0px;
+  margin: 0 auto;
+  //border: 0px;
+  border: 1px solid #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16);
+
+  @media (min-width: 768px) {
+    width: 101px;
+    height: 101px!important;
+  }
+
+  &:hover {
+    border-color: #f1f1f1!important;
+  }
+
+  &.connectedSource {
+
+    border-color: rgba(230, 74, 25, 0.6)!important;
+    box-shadow: none;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 24px;
+      background-color: #e64a1b;
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+    }
+  }
+
+  img {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #ffffff;
+
+
+    @media (min-width: 768px) {
+
+    }
+  }
+}
+
+.sourceName {
+  padding: 9px 0px;
+  text-align: center;
+  font-family: RalewayLight;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.sourceWrapper {
+  @media (max-width: 768px) {
+    padding: 0px;
+    h3 {
+      text-align: center;
+      float: none!important;
+    }
+  }
+
+  .sourceHeader {
+    font-size: 14px;
+    color: #9b9b9b;
+    @media (min-width: 768px) {
+      font-size: 24px;
+    }
+    &.connectedSource {
+      color: #e64a1b;
+    }
+  }
+
+  .activeSourceIcon {
+    padding: 0px;
+
+    .sourceThumbnailWraper {
+      background: none;
+    }
+
+    .activeSource {
+      margin: 0 auto;
+      @media (min-width: 768px) {
+        margin: auto;
+      }
+
+      img {
+        width: 94px;
+        height: 94px;
+
+        @media (min-width: 768px) {
+          width: 101px;
+          height: 101px;
+        }
+      }
+    }
+  }
+
+  .activeSourceDescription {
+    margin-top: 10px;
+  }
+
+  .source {
+    background: none;
+
+    @media (max-width: 768px) {
+      //padding-top: 17px;
+      margin-bottom: 16px!important;
+      //width: 188px;
+    }
+
+    button {
+      @media (max-width: 768px) {
+        width: 174px;
+        padding: 8px 34px;
+        font-size: 19px;
+      }
+    }
+
+    &.connectedSource {
+      &:after {
+        right: 5px;
+        bottom: 5px;
+      }
+    }
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .categorySources {
+    padding-bottom: 10px;
+  }
+
+}
+
+.button {
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 20px auto 10px;
+  border-radius: 24px;
+  border: none;
+  font-family: RalewayLight;
+  font-size: 11px;
+}
+
+.offButton,
+.offButton:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.onButton,
+.onButton:hover {
+  background-color: #e64a1b;
+  color: #ffffff;
+}
+
+.backButtonToSources {
+  display: block;
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0 auto 15px;
+  border-radius: 24px;
+  font-family: RalewayRegular;
+  font-size: 17px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

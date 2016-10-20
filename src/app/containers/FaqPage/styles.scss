@@ -1,0 +1,45 @@
+.faqWrapper {
+
+}
+
+.faqCategory {
+  padding: 5px 29px 20px;
+  margin-left: -29px;
+  margin-right: -29px;
+  border-bottom: 1px solid rgb(240, 240, 240);
+  font-family: RalewayLight;
+
+
+}
+
+.selectCategoryWrapper {
+  padding-left: 0px;
+  padding-right: 0px;
+
+  &:hover {
+    outline: none;
+  }
+}
+
+.selectCategory {
+  box-shadow: 0 2px 1px 0 rgba(35, 35, 35, 0.08);
+
+  font-family: RalewayLight;
+  font-size: 18px;
+
+  > div {
+    border: 1px solid rgba(35, 35, 35, 0.16);
+    border-color: rgba(35, 35, 35, 0.16)!important;
+    border-radius: 4px;
+    box-shadow: none!important;
+  }
+
+  > div {
+
+
+  }
+}
+
+.selectCategoryLabel {
+  padding-left: 0px;
+}

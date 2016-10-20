@@ -1,0 +1,15 @@
+.indicatorWrapper {
+  padding-bottom: 65px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.16);
+}
+
+.indicatorsUserHelp {
+  font-family: RalewayLight;
+  font-length: 18px;
+  @media (min-width: 768px) {
+    margin-top: 8px;
+    font-family: RalewayExtraLight;
+    font-size: 24px;
+    line-height: 29px;
+  }
+}

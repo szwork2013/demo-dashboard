@@ -1,0 +1,57 @@
+.connectedPackages {
+  width: 100%;
+  min-height: 310px;
+  border-radius: 8px;
+  &:not(.isConnected) {
+    border: 3px dashed rgba(151, 151, 151, 0.16) !important;
+  }
+
+  > div:last-child {
+    padding: 10px 5px;
+  }
+
+  > div:first-child {
+    > div {
+      max-height: 34px;
+    }
+  }
+}
+
+.connectedPackagesEmpty {
+  top: center;
+  left: center;
+  font-family: RalewayMedium;
+  font-size: 24px;
+  color: #dbdbdb;
+}
+
+.connectedPackageInfo {
+  height: 147px;
+  padding-top: 7px;
+  padding-bottom: 13px;
+
+  img {
+
+  }
+}
+
+.connectedPackagesStatus {
+  padding-top: 10px;
+  font-family: RalewayMedium;
+  text-transform: uppercase;
+  color: #232323;
+}
+
+.questionGroup {
+  margin-bottom: 0px;
+}
+
+.questionInput,
+.questionInput:hover,
+.questionInput::placeholder {
+  border: 0px;
+  box-shadow: none;
+  outline: none;
+  font-family: RalewayLight;
+  color: rgba(155, 155, 155, 0.50);
+}

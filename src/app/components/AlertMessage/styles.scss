@@ -1,0 +1,53 @@
+.alertMessage {
+  position: relative;
+  width: 100%;
+  min-height: 52px;
+  padding: 7px 17px 7px 19px;
+  margin-bottom: 20px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+
+  &.success {
+    background-color: #6edb6e;
+    border-color: #33cc33;
+
+    img {
+      width: 28px;
+      height: 20px;
+    }
+
+    .message {
+      color: #ffffff;
+    }
+  }
+  
+  &.error {
+    background-color: #e64a1b;
+    border-color: #e62c00;
+
+    .message {
+      color: #ffffff;
+    }
+  }
+
+  img {
+    margin-right:17px;
+  }
+
+  .message {
+    font-family: RalewaySemiBold;
+    font-size: 24px;
+    color: #000000;
+    vertical-align: middle;
+  }
+
+  .close {
+    top: center;
+    right: 17px;
+    color: #ffffff;
+    font-family: RalewayRegular;
+    font-size: 18px;
+    text-transform: lowercase;
+    cursor: pointer;
+  }
+}

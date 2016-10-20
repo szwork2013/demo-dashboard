@@ -1,0 +1,138 @@
+.header {
+  display: inline-block;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+
+  > .navbar {
+    height: inherit;
+    margin-bottom: 0px;
+
+    .navbarHeader {
+      position: absolute;
+      top: 0px;
+
+      .link {
+        height: 60px;
+        padding: 18px 0;
+      }
+    }
+
+    .nav {
+      width: 100%;
+      @media (min-width: 768px) {
+        width: auto;
+      }
+    }
+
+    .userName {
+      display: none;
+      padding: 21px 0 23px 0;
+      margin: 0 13px 0 0;
+      font-family: RalewayExtraLight;
+      font-size: 14px;
+      line-height: 16px;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    .userMenu {
+      ul {
+        //width: 176px;
+        //padding: 7px 0px 11px 0px;
+        margin-left: -22px;
+        margin-right: -22px;
+        clear: both;
+        box-sizing: border-box;
+        box-shadow: none;
+        background-color: rgb(250, 250, 250);
+        border-top: 0.5px solid rgba(155, 155, 155, 0.24);
+        @media (min-width: 768px) {
+          margin: 0px;
+          background: #ffffff;
+          border: 0.5px solid rgb(222, 222, 222);
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+
+        .userMenuLink {
+          padding-left: 20px;
+          border-bottom: 0.5px solid rgb(240, 240, 240);
+          @media (min-width: 768px) {
+            border: 0px;
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &.logout > a {
+            @media (min-width: 768px) {
+              background: url("./images/logout.svg") 21px 12px no-repeat;
+            }
+          }
+          // First a element.
+          > a {
+            display: block;
+            padding: 14px 69px 14px 20px;
+            margin-left: -20px;
+            @media (min-width: 768px) {
+              padding-left: 66px;
+              line-height: 16px;
+            }
+            &:hover {
+              background-color: rgba(216, 216, 216, 0.16);
+            }
+          }
+          // All a element.
+          a {
+            line-height: 16px;
+            &:hover {
+              color: #000000;
+            }
+          }
+        }
+      }
+
+      // User picture in menu.
+      > a,
+      > a:focus,
+      > a:hover {
+        //width: 68px;
+        height: 60px;
+        padding: 8px 0px;
+        float: right;
+        background: none;
+        @media (min-width: 768px) {
+          padding-left: 12px;
+          padding-right: 12px;
+          background-color: rgba(216, 216, 216, 0.16);
+        }
+      }
+      .userPictureWrapper {
+        display: table-cell;
+        width: 44px;
+        height: 44px;
+        padding: 1px;
+        background-color: #FFF;
+        border: 0.5px solid #DEDEDE;
+        border-radius: 24px;
+        // Styles for user picture(First symbol).
+        text-align: center;
+        vertical-align: middle;
+        color: #e64a1b;
+        font-family: RalewayBold;
+        font-size: 24px;
+        text-transform: uppercase;
+
+        .userPicture {
+          border-radius: 24px;
+        }
+      }
+
+
+    }
+  }
+}

@@ -1,0 +1,324 @@
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover {
+  background-color: rgba(216, 216, 216, 0.16);
+  color: inherit;
+}
+
+.container .container {
+  padding: 0px;
+}
+
+.navbar {
+  border: 0px;
+  border-radius: 0px;
+
+  .navbar-nav {
+    margin-left: 0px;
+    margin-right: 0px;
+    li:first-child a {
+      padding-left: 0px;
+    }
+  }
+}
+
+.navbar-brand {
+  margin-left: 0px;
+}
+
+.navbar-default {
+  background-color: inherit;
+}
+
+.container {
+  padding-left: 22px;
+  padding-right: 22px;
+  margin: 0 auto;
+  > .navbar-header,
+  > .navbar-collapse {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1224px;
+  }
+
+  @media (min-width: 768px) {
+
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar>.container .navbar-brand,
+  .navbar>.container-fluid .navbar-brand {
+    margin-left: 0;
+  }
+}
+
+.navbar-header {
+  float: left;
+}
+
+.navbar-nav {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  &.navbar-right {
+    float: right;
+  }
+}
+
+.navbar-collapse.collapse {
+  display: block;
+  border: 0px;
+}
+
+.panel-group {
+  padding: 24px 29px;
+  border: 0.5px solid rgba(151, 151, 151, 0.16);
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 32px rgba(35, 35, 35, 0.002);
+
+  .panel.panel-default {
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    > .panel-heading {
+      display: block;
+      padding: 22px 0px;
+      background-color: #ffffff!important;
+
+      &:before {
+        width: 28px;
+        height: 28px;
+        float: left;
+        padding: 3px 0 0 9px;
+        margin-right: 20px;
+        content: '>';
+        border: 1px solid rgb(247, 247, 247);
+        border-radius: 24px;
+        font-family: RalewayThin;
+        font-size: 16px;
+        line-height: 18px;
+      }
+
+      .panel-title {
+        margin-left: 48px;
+        a {
+          font-family: RalewayMedium;
+          line-height: 28px;
+          cursor: pointer;
+        }
+      }
+    }
+    &.active {
+      .panel-heading {
+        border-bottom: 1px solid rgb(230, 74, 27)!important;
+        &:before {
+          transform: rotate(90deg);
+          border-color: rgb(230, 74, 27);
+        }
+      }
+    }
+
+    .panel-body {
+      padding-left: 48px;
+      padding-bottom: 20px;
+      border-top: 0px!important;
+      font-family: RalewayLight;
+      line-height: 18px;
+    }
+    &:last-child {
+      > .panel-heading {
+        border: none;
+      }
+    }
+
+    &.faqPanel {
+      .panel-body {
+        @media (max-width: 768px) {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+}
+
+.panel.panel-default {
+  border: 1px solid rgba(151, 151, 151, 0.16);
+  border-radius: 8px;
+  box-shadow: 0px 2px 32px rgba(35, 35, 35, 0.02);
+
+  &.header-all {
+    > .panel-heading {
+      display: block;
+    }
+  }
+
+  > .panel-heading {
+    display: none;
+    padding: 24px 28px 22px 28px;
+    background-color: #ffffff;
+    font-family: RalewayLight;
+    font-size: 24px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    .panel-title {
+      overflow: hidden;
+    }
+  }
+  .panel-body {
+    padding: 15px 15px;
+    //border-radius: 8px;
+    background-color: #fff;
+    border-radius: 8px;
+    //overflow: hidden;
+
+    @media (min-width: 768px) {
+      padding: 15px 28px;
+    }
+
+    img {
+      max-width: 100%!important;
+      height: auto;
+    }
+  }
+  .panel-footer {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 1px solid rgb(240, 240, 240);
+    background-color: #ffffff;
+  }
+}
+
+.nav.nav-tabs {
+  border: 0px;
+  margin-bottom: 40px;
+
+  li {
+    margin-right: 10px;
+    margin-bottom: 18px;
+    @media (min-width: 768px) {
+      margin-right: 22px;
+    }
+    a {
+      padding: 5px 21px;
+      background-color: #ffffff;
+      border: 1px solid rgba(155, 155, 155, 0.32);
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+      border-radius: 24px;
+      font-family: RalewayLight;
+      outline: none;
+      &:hover {
+        background-color: inherit;
+        color: inherit;
+      }
+    }
+    &.active,
+    &:hover {
+      a {
+        border: 1px solid rgb(230, 74, 27);
+        background-color: rgb(230, 74, 27);
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.thumbnail .caption {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.table {
+  margin-bottom: 0px;
+  background-color: #ffffff;
+
+  > thead {
+    > tr {
+      border-bottom: 1px solid #f0f0f0;
+      > th {
+        padding: 12px 0px;
+        border-bottom: 0px;
+        font-family: RalewayMedium;
+        font-size: 20px;
+        font-weight: normal;
+        @media (min-width: 768px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  > tbody {
+    > tr {
+      border-bottom: 1px solid rgba(155, 155, 155, 0.16);
+      &:last-child {
+        border-bottom: 0px;
+      }
+      > td {
+        display: block;
+        padding: 6px 0px;
+        border: 0px;
+        vertical-align: middle;
+        font-family: RalewayLight;
+        &:first-child {
+          padding-top: 12px;
+        }
+        &:last-child {
+          padding-bottom: 18px;
+        }
+        @media (min-width: 768px) {
+          padding: 18px 0;
+          display: table-cell;
+        }
+      }
+    }
+  }
+}
+
+.has-error .form-control {
+  border-color: inherit;
+}
+
+.has-success .form-control,
+.has-success .form-control:hover {
+  border-color: #33cc33!important;
+}
+
+.glyphicon-remove:before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 24px;
+  background-image: url("./images/icons/error.png");
+  background-size: 22px 24px;
+}
+
+.glyphicon-ok:before {
+  content: '';
+  display: block;
+  width: 27px;
+  height: 27px;
+  background-image: url("./images/icons/success.png");
+  background-size: 27px 27px;
+}
+
+.daterangepicker {
+  font-family: RalewayLight;
+  text-transform: capitalize;
+
+  table thead tr th {
+    font-family: RalewayMedium;
+  }
+
+  td.disabled {
+    color: #f7f7f7;
+  }
+}

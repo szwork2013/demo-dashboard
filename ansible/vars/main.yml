@@ -1,0 +1,12 @@
+---
+
+ntp_timezone: Europe/Moscow
+app_name: dashboard
+uwsgi_processes: 2
+uwsgi_workers: 4
+
+zabbix_url: http://zabbix.welltory.com/zabbix/
+zabbix_agent_service: zabbix-agent
+zabbix_repo: zabbix
+agent_server: 37.139.1.59
+agent_serveractive: 37.139.1.59

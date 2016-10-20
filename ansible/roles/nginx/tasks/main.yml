@@ -1,0 +1,47 @@
+---
+
+- name: Check if nginx exists
+  stat: path=/usr/sbin/nginx
+  register: nginx_exists
+
+- name: Add NGINX signing key
+  become: yes
+  apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
+  when: nginx_exists.stat.exists == False
+
+- name: Add sources.list deb url for NGINX
+  become: yes
+  lineinfile: dest=/etc/apt/sources.list line="deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx"
+  when: nginx_exists.stat.exists == False
+
+- name: Install NGINX
+  become: yes
+  apt: name=nginx update_cache=yes state=latest cache_valid_time=86400
+  tags: packages
+  when: nginx_exists.stat.exists == False
+
+- name: Ensure SSL keys
+  become: yes
+  become_user: "{{ app_user }}"
+  synchronize: src=ssl dest=/home/{{ app_name }}/ recursive=yes
+  tags:
+    - deploy
+
+- name: Ensure conf.d/default.conf is absent
+  become: yes
+  file: path=/etc/nginx/conf.d/default.conf  state=absent
+
+- name: Ensure sites-available/default is absent
+  become: yes
+  file: path=/etc/nginx/sites-available/default  state=absent
+
+- name: Ensure dashboard configuration file
+  become: Yes
+  template: src={{ item }}.j2
+            dest=/etc/nginx/conf.d/{{ item }}
+  items:
+    - dashboard.conf
+  notify: reload nginx
+  when: staging_mode == 1 or production_mode == 1
+  tags:
+    - deploy
