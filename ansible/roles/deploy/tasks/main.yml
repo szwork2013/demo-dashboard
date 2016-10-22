@@ -6,9 +6,9 @@
   tags:
     - deploy
 
-- git: repo=git@github.com:Welltory/dashboard.git
+- git: repo=git@github.com:Welltory/demo-dashboard.git
        dest=/home/{{ app_user }}/site/
-       version=develop
+       version=master
        accept_hostkey=yes
        force=yes
   become: yes
