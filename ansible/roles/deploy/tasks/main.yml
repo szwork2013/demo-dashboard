@@ -35,7 +35,7 @@
     - deploy
 
 - name: Restart application
-  shell: NODE_ENV=production pm2 restart server
+  shell: NODE_ENV=production pm2 restart server --watch
   become: yes
   become_user: "{{ app_user }}"
   args:
