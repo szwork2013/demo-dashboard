@@ -6,9 +6,9 @@
   tags:
     - deploy
 
-- git: repo=git@github.com:Welltory/dashboard.git
+- git: repo=git@github.com:Welltory/demo-dashboard.git
        dest=/home/{{ app_user }}/site/
-       version=develop
+       version=master
        accept_hostkey=yes
        force=yes
   become: yes
@@ -35,7 +35,7 @@
     - deploy
 
 - name: Restart application
-  shell: NODE_ENV=production pm2 restart server
+  shell: NODE_ENV=production pm2 restart server --watch
   become: yes
   become_user: "{{ app_user }}"
   args:

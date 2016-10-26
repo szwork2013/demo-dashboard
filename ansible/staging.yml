@@ -11,9 +11,7 @@
     - staging_mode: 1
     - production_mode: 0
     - update_apt_cache: yes
-    - nginx_app_name: stage-dashboard
-
-
+    - nginx_app_name: demo-dashboard
 
   roles:
     - common
