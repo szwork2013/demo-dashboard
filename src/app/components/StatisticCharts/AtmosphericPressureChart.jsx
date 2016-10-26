@@ -161,7 +161,9 @@ export default class AtmosphericPressureChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('AtmosphericPressure', this.state.indexType);
+    });
   }
 
   render() {

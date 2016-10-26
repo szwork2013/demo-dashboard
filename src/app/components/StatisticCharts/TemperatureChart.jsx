@@ -191,7 +191,9 @@ export default class TemperatureChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('Temperature', this.state.indexType);
+    });
   }
 
   render() {

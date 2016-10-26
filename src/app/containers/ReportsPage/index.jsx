@@ -10,6 +10,7 @@ import { autobind } from 'core-decorators';
 
 // Actions.
 import * as ReportsActions from '_actions/ReportsActions';
+import * as SegmentActions from '_actions/SegmentActions';
 
 // Constants.
 import * as ReportsConstants from '_constants/ReportsConstants';
@@ -24,7 +25,8 @@ import styles from './styles.scss';
     i18n: state.i18n,
   }),
   dispatch => ({
-    actions: bindActionCreators(ReportsActions, dispatch),
+    reportActions: bindActionCreators(ReportsActions, dispatch),
+    segmentActions: bindActionCreators(SegmentActions, dispatch),
   })
 )
 @autobind
@@ -34,7 +36,8 @@ export default class ReportsPage extends Component {
     reports: PropTypes.object.isRequired,
     profile: PropTypes.object.isRequired,
     i18n: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
+    reportActions: PropTypes.object.isRequired,
+    segmentActions: PropTypes.object.isRequired,
   };
 
   constructor() {
@@ -46,7 +49,7 @@ export default class ReportsPage extends Component {
   }
 
   componentDidMount() {
-    this.props.actions.loadReports();
+    this.props.reportActions.loadReports();
   }
 
   getReportsContent() {
@@ -72,7 +75,7 @@ export default class ReportsPage extends Component {
           <tr>
             <td className={styles.reportDate}>{moment(report.date).format(format)}</td>
             <td className={styles.reportTitle}>{report.title}</td>
-            <td className={styles.reportLink}><Link to={report.link} target="_blank" rel="nofollow noopener">{I18n.t('Смотреть отчёт')}</Link></td>
+            <td className={styles.reportLink}><Link to={report.link} target="_blank" rel="nofollow noopener" onClick={this.onClickViewReport}>{I18n.t('Смотреть отчёт')}</Link></td>
           </tr>
         );
       });
@@ -86,7 +89,12 @@ export default class ReportsPage extends Component {
 
   onClickSortByDate(e) {
     e.preventDefault();
-    this.props.actions.sortReports();
+    this.props.reportActions.sortReports();
+    this.props.segmentActions.clickSortReports();
+  }
+
+  onClickViewReport() {
+    this.props.segmentActions.clickViewReport();
   }
 
   render() {

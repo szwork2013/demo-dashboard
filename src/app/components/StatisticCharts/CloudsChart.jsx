@@ -165,7 +165,9 @@ export default class CloudsChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('Clouds', this.state.indexType);
+    });
   }
 
   render() {

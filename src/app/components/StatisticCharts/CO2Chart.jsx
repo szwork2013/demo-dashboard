@@ -166,7 +166,9 @@ export default class CO2Chart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('CO2', this.state.indexType);
+    });
   }
 
   render() {

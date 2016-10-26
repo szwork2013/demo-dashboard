@@ -3,24 +3,52 @@ import { Navbar, Nav, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router';
 import { LinkContainer } from 'react-router-bootstrap';
 import { I18n } from 'react-redux-i18n';
+import { autobind } from  'core-decorators';
 
 // Components.
 import Logo from '_components/Logo';
 
 // Utils.
-import { isIOSApp } from '_utils';
+import { isIOSApp, getLanguage } from '_utils';
 
 // Styles.
 import styles from './styles.scss';
 
+@autobind
 export default class Header extends Component {
 
   static propTypes = {
     profile: PropTypes.object.isRequired,
+    segmentActions: PropTypes.object.isRequired,
   };
+
+  onClickLogo() {
+    this.props.segmentActions.clickLogo();
+  }
+
+  onClickUserMenu() {
+    this.props.segmentActions.clickUserMenu();
+  }
+
+  onClickUserMenuAnalytics() {
+    this.props.segmentActions.clickUserMenuAnalytics();
+  }
+
+  onClickUserMenuDataSources() {
+    this.props.segmentActions.clickUserMenuDataSources();
+  }
+
+  onClickUserMenuReports() {
+    this.props.segmentActions.clickUserMenuReports();
+  }
+
+  onClickUserMenuPayment() {
+    this.props.segmentActions.clickUserMenuPayment();
+  }
 
   render() {
     const { profile, isFetched } = this.props.profile;
+    const language = getLanguage();
     let username;
     let userpic;
     if (isFetched) {
@@ -39,28 +67,28 @@ export default class Header extends Component {
         <Navbar className={styles.navbar}>
           <Navbar.Header className={styles.navbarHeader}>
             <Navbar.Brand>
-              <Link to="/dashboard" className={styles.link}><Logo /></Link>
+              <Link to="/dashboard" onClick={this.onClickLogo} className={styles.link}><Logo /></Link>
             </Navbar.Brand>
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav className={styles.nav} pullRight>
               <Navbar.Text className={styles.userName}>{username}</Navbar.Text>
-              <NavDropdown title={userPicture} className={styles.userMenu} id="nav-dropdown" noCaret>
+              <NavDropdown title={userPicture} className={styles.userMenu} onClick={this.onClickUserMenu} id="nav-dropdown" noCaret>
                 <LinkContainer to="/dashboard">
-                  <MenuItem className={styles.userMenuLink}>{I18n.t('Аналитика')}</MenuItem>
+                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuAnalytics}>{I18n.t('Аналитика')}</MenuItem>
                 </LinkContainer>
-                <LinkContainer to="/faq">
-                  <MenuItem className={styles.userMenuLink}>{I18n.t('FAQ')}</MenuItem>
-                </LinkContainer>
+                {/*<LinkContainer to="/faq">*/}
+                  {/*<MenuItem className={styles.userMenuLink}>{I18n.t('FAQ')}</MenuItem>*/}
+                {/*</LinkContainer>*/}
                 {!isIOSApp() && <LinkContainer to="/data-sources">
-                  <MenuItem className={styles.userMenuLink}>{I18n.t('Источники данных')}</MenuItem>
+                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuDataSources()}>{I18n.t('Источники данных')}</MenuItem>
                 </LinkContainer>}
-                <LinkContainer to="/reports">
-                  <MenuItem className={styles.userMenuLink}>{I18n.t('Отчёты')}</MenuItem>
-                </LinkContainer>
-                <LinkContainer to="/payment">
-                  <MenuItem className={styles.userMenuLink}>{I18n.t('Оплата')}</MenuItem>
-                </LinkContainer>
+                {language === 'ru' && <LinkContainer to="/reports">
+                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuReports()}>{I18n.t('Отчёты')}</MenuItem>
+                </LinkContainer>}
+                {language === 'ru' && <LinkContainer to="/payment">
+                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuPayment()}>{I18n.t('Оплата')}</MenuItem>
+                </LinkContainer>}
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

@@ -210,7 +210,9 @@ export default class SleepChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('Sleep', this.state.indexType);
+    });
   }
 
   render() {

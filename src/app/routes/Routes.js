@@ -57,7 +57,7 @@ const createRoutes = (store) => {
         <Route path="dashboard" title={I18n.t('Индикаторы состояния')} components={{ additionTitle: DashboardPageAdditionalTitle, content: DashboardPage }} />
         <Route path="payment" title={I18n.t('Рекомендуем вам')} components={PaymentPage} />
         <Route path="reports" title={I18n.t('Отчёты')} components={ReportsPage} />
-        <Route path="faq" title={I18n.t('FAQ-частые вопросы')} components={{ additionTitle: FaqPageAdditionalTitle, content: FaqPage }} />
+        {/*<Route path="faq" title={I18n.t('FAQ-частые вопросы')} components={{ additionTitle: FaqPageAdditionalTitle, content: FaqPage }} />*/}
         <Route path="data-sources" title={I18n.t('Источники данных')} components={DataSourcesPage} />
       </Route>
 

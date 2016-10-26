@@ -175,7 +175,9 @@ export default class HowDayChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('HowDay', this.state.indexType);
+    });
   }
 
   render() {

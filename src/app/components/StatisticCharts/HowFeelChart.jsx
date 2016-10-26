@@ -172,7 +172,9 @@ export default class HowFeelChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('HowFeel', this.state.indexType);
+    });
   }
 
   render() {

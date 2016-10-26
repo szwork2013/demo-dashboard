@@ -165,7 +165,9 @@ export default class HumidityChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('Humidity', this.state.indexType);
+    });
   }
 
   render() {

@@ -174,7 +174,9 @@ export default class HowSleepChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('HowSleep', this.state.indexType);
+    });
   }
 
   render() {

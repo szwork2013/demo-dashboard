@@ -190,7 +190,9 @@ export default class ActivityChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('Activity', this.state.indexType);
+    });
   }
 
   render() {

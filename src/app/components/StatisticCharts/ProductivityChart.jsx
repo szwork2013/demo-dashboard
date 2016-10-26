@@ -192,7 +192,9 @@ export default class ProductivityChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('Productivity', this.state.indexType);
+    });
   }
 
   render() {

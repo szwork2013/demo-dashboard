@@ -13,6 +13,7 @@ import IntercomChat from '_components/IntercomChat';
 // Actions.
 import * as ProfileActions from '_actions/ProfileActions';
 import * as ConfigActions from '_actions/ConfigActions';
+import * as SegmentActions from '_actions/SegmentActions';
 
 // Styles.
 import styles from './styles.scss';
@@ -25,6 +26,7 @@ import styles from './styles.scss';
   dispatch => ({
     profileActions: bindActionCreators(ProfileActions, dispatch),
     configActions: bindActionCreators(ConfigActions, dispatch),
+    segmentActions: bindActionCreators(SegmentActions, dispatch),
   })
 )
 export default class AuthContainer extends Component {
@@ -32,6 +34,7 @@ export default class AuthContainer extends Component {
   static propTypes = {
     profileActions: PropTypes.object.isRequired,
     configActions: PropTypes.object.isRequired,
+    segmentActions: PropTypes.object.isRequired,
     additionTitle: PropTypes.element,
     content: PropTypes.element,
     children: PropTypes.element,
@@ -39,18 +42,18 @@ export default class AuthContainer extends Component {
 
   componentDidMount() {
     this.props.profileActions.loadUserProfile();
-    this.props.configActions.loadConfig();
+    // this.props.configActions.loadConfig();
   }
 
   render() {
     console.log(cookie.load('welltorysessionid'), 'COOKIE');
-    const { profile, config } = this.props;
+    const { profile, config, segmentActions } = this.props;
     const pageTitle = this.props.content ? this.props.content.props.route.title : this.props.children.props.route.title;
     const pageAdditionTitle = this.props.additionTitle || null;
     return (
       <div>
         <LoadingBar className={styles.loadingBar} />
-        <Header profile={profile} />
+        <Header profile={profile} segmentActions={segmentActions} />
         <Grid className="main-wrapper">
           <Row className={styles.titleWrapper}>
             {pageTitle && <Col xsHidden md={6} className={styles.title}>
@@ -66,7 +69,7 @@ export default class AuthContainer extends Component {
             </Col>
           </Row>
         </Grid>
-        <Footer />
+        <Footer segmentActions={segmentActions} />
         <IntercomChat profile={profile} config={config} />
       </div>
     );

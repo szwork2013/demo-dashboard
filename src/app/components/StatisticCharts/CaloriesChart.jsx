@@ -169,7 +169,9 @@ export default class CaloriesChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('Calories', this.state.indexType);
+    });
   }
 
   render() {

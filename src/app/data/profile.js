@@ -1,7 +1,12 @@
+// Utils.
+import { getLanguage } from '_utils';
+
+const language = getLanguage();
+
 const profile = {
   is_paid: true,
   email: 'annafadeeva79@gmail.com',
-  username: 'Анна Фадеева',
+  username: language === 'ru' ? 'Анна Фадеева' : 'Emma Williams',
   wid: 9347,
   rr_length: 100,
   rescuetime_connected: false,

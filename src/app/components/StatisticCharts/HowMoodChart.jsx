@@ -174,7 +174,9 @@ export default class HowMoodChart extends Component {
   }
 
   switchIndexType(indexType) {
-    this.setState({ indexType });
+    this.setState({ indexType }, () => {
+      this.props.segmentActions.clickChartSwitcher('HowMood', this.state.indexType);
+    });
   }
 
   render() {
