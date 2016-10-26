@@ -62,7 +62,6 @@ export function login(creds) {
       }
     })
     .catch((error) => {
-      console.log(error.response, 'RESPONSE ');
       // @todo Why we don't have response???
       if (error.response) {
       }

@@ -46,7 +46,6 @@ export default class AuthContainer extends Component {
   }
 
   render() {
-    console.log(cookie.load('welltorysessionid'), 'COOKIE');
     const { profile, config, segmentActions } = this.props;
     const pageTitle = this.props.content ? this.props.content.props.route.title : this.props.children.props.route.title;
     const pageAdditionTitle = this.props.additionTitle || null;

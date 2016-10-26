@@ -41,7 +41,6 @@ export function resetPassword(email) {
       dispatch(receiveResetPassword(message));
     })
     .catch((error) => {
-      console.log(error.response, 'ERROR');
       const message = I18n.t('Пользователя с такие email не существует');
       dispatch(receiveResetPasswordError(message));
     });

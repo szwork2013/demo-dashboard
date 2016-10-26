@@ -81,13 +81,13 @@ export default class Header extends Component {
                   {/*<MenuItem className={styles.userMenuLink}>{I18n.t('FAQ')}</MenuItem>*/}
                 {/*</LinkContainer>*/}
                 {!isIOSApp() && <LinkContainer to="/data-sources">
-                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuDataSources()}>{I18n.t('Источники данных')}</MenuItem>
+                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuDataSources}>{I18n.t('Источники данных')}</MenuItem>
                 </LinkContainer>}
                 {language === 'ru' && <LinkContainer to="/reports">
-                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuReports()}>{I18n.t('Отчёты')}</MenuItem>
+                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuReports}>{I18n.t('Отчёты')}</MenuItem>
                 </LinkContainer>}
                 {language === 'ru' && <LinkContainer to="/payment">
-                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuPayment()}>{I18n.t('Оплата')}</MenuItem>
+                  <MenuItem className={styles.userMenuLink} onClick={this.onClickUserMenuPayment}>{I18n.t('Оплата')}</MenuItem>
                 </LinkContainer>}
               </NavDropdown>
             </Nav>

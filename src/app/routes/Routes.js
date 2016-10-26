@@ -12,7 +12,7 @@ import DashboardPage, { DashboardPageAdditionalTitle } from '_containers/Dashboa
 import PaymentPage from '_containers/PaymentPage';
 import FaqPage, { FaqPageAdditionalTitle } from '_containers/FaqPage';
 import ReportsPage from '_containers/ReportsPage';
-import DataSourcesPage from '_containers/DataSourcesPage';
+import DataSourcesPage, { DataSourcesPageAdditionalTitle } from '_containers/DataSourcesPage';
 
 // Components.
 import NotFound from '_components/NotFound';
@@ -58,7 +58,7 @@ const createRoutes = (store) => {
         <Route path="payment" title={I18n.t('Рекомендуем вам')} components={PaymentPage} />
         <Route path="reports" title={I18n.t('Отчёты')} components={ReportsPage} />
         {/*<Route path="faq" title={I18n.t('FAQ-частые вопросы')} components={{ additionTitle: FaqPageAdditionalTitle, content: FaqPage }} />*/}
-        <Route path="data-sources" title={I18n.t('Источники данных')} components={DataSourcesPage} />
+        <Route path="data-sources" title={I18n.t('Источники данных')} components={{ additionTitle: DataSourcesPageAdditionalTitle, content: DataSourcesPage}} />
       </Route>
 
       { /* Catch all route */ }

@@ -173,9 +173,6 @@ export default class DataSourcesPage extends Component {
         modal: 1,
 
         finish: function(err, sessionTokenObject) {
-          console.log(sessionTokenObject, 'sessionTokenObject');
-          console.log('WHAT?');
-          console.log(this, 'FINISH_PROPS_ACTIONS');
           actions.connectDatasource(sessionTokenObject);
 
           /* Called after user finishes connecting their health data
@@ -194,13 +191,11 @@ export default class DataSourcesPage extends Component {
 
         },
         close: function() {
-          console.log('CLOSE');
           actions.trackDatasource();
           /* Optional callback called when a user closes the popup
            without connecting any data sources */
         },
         error: function(err) {
-          console.log('ERROR');
           /* Optional callback called if an error occurs when loading
            the popup. */
 
@@ -227,13 +222,9 @@ export default class DataSourcesPage extends Component {
   }
 
   onLoadIframe() {
-    console.log(this.refs.iframeConnect);
-    console.log(this.refs.iframeConnect.contentWindow);
-    console.log('IFRAME LOAD');
   }
 
   render() {
-    console.log(this.props.actions, 'ACTIONS');
     const { datasources, i18n } = this.props;
     if (!datasources.isFetched) {
       return null;
@@ -256,6 +247,26 @@ export default class DataSourcesPage extends Component {
         </Modal>
       </div>
     );
+  }
+
+}
+
+@connect(
+  state => ({
+    i18n: state.i18n,
+  })
+)
+export class DataSourcesPageAdditionalTitle extends Component {
+
+  render() {
+    let message;
+    if (this.props.i18n.locale === 'ru') {
+      message = 'Это демо, подключение данных не будет работать:)';
+    }
+    else {
+      message = 'Demo mode, data sources connection not available';
+    }
+    return <h2 style={{ color: '#e64a1b' }}>{message}</h2>;
   }
 
 }

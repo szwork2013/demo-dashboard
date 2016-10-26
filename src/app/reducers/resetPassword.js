@@ -9,7 +9,6 @@ const initialState = {
 };
 
 export default function resetPassword(state = initialState, action = {}) {
-  console.log(action, 'ACTION');
   switch (action.type) {
     case AuthConstants.RESET_PASSWORD_REQUEST:
       return {
