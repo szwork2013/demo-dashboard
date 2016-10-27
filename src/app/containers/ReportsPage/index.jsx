@@ -72,7 +72,7 @@ export default class ReportsPage extends Component {
       }
       content = reports.reports.map((report) => {
         return (
-          <tr>
+          <tr className={classnames({[styles.bold]: report.pk === 3})}>
             <td className={styles.reportDate}>{moment(report.date).format(format)}</td>
             <td className={styles.reportTitle}>{report.title}</td>
             <td className={styles.reportLink}><Link to={report.link} target="_blank" rel="nofollow noopener" onClick={this.onClickViewReport}>{I18n.t('Смотреть отчёт')}</Link></td>

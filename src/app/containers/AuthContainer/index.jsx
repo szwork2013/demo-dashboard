@@ -9,6 +9,7 @@ import cookie from 'react-cookie';
 import Header from '_components/Header';
 import Footer from '_components/Footer';
 import IntercomChat from '_components/IntercomChat';
+import SmoochChat from '_components/SmoochChat';
 
 // Actions.
 import * as ProfileActions from '_actions/ProfileActions';
@@ -69,7 +70,7 @@ export default class AuthContainer extends Component {
           </Row>
         </Grid>
         <Footer segmentActions={segmentActions} />
-        <IntercomChat profile={profile} config={config} />
+        <SmoochChat profile={profile} config={config} />
       </div>
     );
   }

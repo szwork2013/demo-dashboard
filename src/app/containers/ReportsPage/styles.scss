@@ -1,6 +1,11 @@
 table {
   tbody {
     tr {
+      &.bold {
+        td {
+          font-family: RalewayBold;
+        }
+      }
     }
   }
 }
