@@ -1,9 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { I18n } from 'react-redux-i18n';
+import moment from 'moment';
 import { autobind } from 'core-decorators';
 
 // Components.
 import ChartElement from '_components/ChartElement';
+
+// Utils.
+import { getLanguage } from '_utils';
 
 const ACTIVITY_CHART_STEP_SIZE = 2000;
 
@@ -166,7 +170,16 @@ export default class ActivityChart extends Component {
     activityData.map((item) => {
       const { date, value, level } = item;
       // Label.
-      chartProps.chart.data.labels.push(date);
+      const language = getLanguage();
+      let dateFormat;
+      if (language === 'ru') {
+        dateFormat = 'DD.MM';
+      }
+      else {
+        dateFormat = 'MM.DD';
+      }
+      const formatedDate = moment(date).format(dateFormat);
+      chartProps.chart.data.labels.push(formatedDate);
       // Value.
       chartProps.chart.data.datasets[1].data.push(level || NaN);
       chartProps.chart.data.datasets[2].data.push(value);

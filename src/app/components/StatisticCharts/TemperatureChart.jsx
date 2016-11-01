@@ -1,9 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { I18n } from 'react-redux-i18n';
+import moment from 'moment';
 import { autobind } from 'core-decorators';
 
 // Components.
 import ChartElement from '_components/ChartElement';
+
+// Utils.
+import { getLanguage } from '_utils';
 
 const TEMPERATURE_CHART_STEP_SIZE_RU = 5;
 const TEMPERATURE_CHART_STEP_SIZE_EN = 10;
@@ -160,7 +164,16 @@ export default class TemperatureChart extends Component {
     temperatureData.map((item) => {
       const { date, value } = item;
       // Label.
-      chartProps.chart.data.labels.push(date);
+      const language = getLanguage();
+      let dateFormat;
+      if (language === 'ru') {
+        dateFormat = 'DD.MM';
+      }
+      else {
+        dateFormat = 'MM.DD';
+      }
+      const formatedDate = moment(date).format(dateFormat);
+      chartProps.chart.data.labels.push(formatedDate);
       // Value.
       let temperatureValue = value;
       if (locale !== 'ru') {

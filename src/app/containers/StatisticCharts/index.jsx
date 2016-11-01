@@ -106,15 +106,7 @@ export default class StatisticCharts extends Component {
 
   getStatistics(startDate, endDate) {
     const { statisticsActions } = this.props;
-    const language = getLanguage();
-    let dateFormat;
-    if (language === 'ru') {
-      dateFormat = 'DD.MM';
-    }
-    else {
-      dateFormat = 'MM.DD';
-    }
-    statisticsActions.loadStatistics(moment(startDate).startOf('day').format(`${dateFormat}.YYYY HH:mm`), moment(endDate).endOf('day').format(`${dateFormat}.YYYY HH:mm`));
+    statisticsActions.loadStatistics(moment(startDate).startOf('day'), moment(endDate).endOf('day'));
   }
 
   onClickDateRangePicker() {

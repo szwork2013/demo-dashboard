@@ -1,11 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { I18n } from 'react-redux-i18n';
+import moment from 'moment';
 import { autobind } from 'core-decorators';
 
 // Components.
 import ChartElement from '_components/ChartElement';
 
 const CALORIES_CHART_STEP_SIZE = 500;
+
+// Utils.
+import { getLanguage } from '_utils';
 
 @autobind
 export default class CaloriesChart extends Component {
@@ -151,7 +155,16 @@ export default class CaloriesChart extends Component {
     caloriesData.map((item) => {
       const { date, value } = item;
       // Label.
-      chartProps.chart.data.labels.push(date);
+      const language = getLanguage();
+      let dateFormat;
+      if (language === 'ru') {
+        dateFormat = 'DD.MM';
+      }
+      else {
+        dateFormat = 'MM.DD';
+      }
+      const formatedDate = moment(date).format(dateFormat);
+      chartProps.chart.data.labels.push(formatedDate);
       // Value.
       chartProps.chart.data.datasets[1].data.push(value);
       // Check max value.

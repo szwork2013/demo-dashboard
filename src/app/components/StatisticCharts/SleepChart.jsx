@@ -7,6 +7,9 @@ import { autobind } from 'core-decorators';
 // Components.
 import ChartElement from '_components/ChartElement';
 
+// Utils.
+import { getLanguage } from '_utils';
+
 const SLEEP_CHART_STEP_SIZE = 2;
 
 @autobind
@@ -182,7 +185,16 @@ export default class SleepChart extends Component {
     sleepData.map((item) => {
       const { date, value, level } = item;
       // Label.
-      chartProps.chart.data.labels.push(date);
+      const language = getLanguage();
+      let dateFormat;
+      if (language === 'ru') {
+        dateFormat = 'DD.MM';
+      }
+      else {
+        dateFormat = 'MM.DD';
+      }
+      const formatedDate = moment(date).format(dateFormat);
+      chartProps.chart.data.labels.push(formatedDate);
       // Value.
       chartProps.chart.data.datasets[1].data.push(level || NaN);
       chartProps.chart.data.datasets[2].data.push(value);

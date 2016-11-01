@@ -1,10 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { I18n } from 'react-redux-i18n';
+import moment from 'moment';
 import classnames from 'classnames';
 import { autobind } from 'core-decorators';
 
 // Components.
 import ChartElement from '_components/ChartElement';
+
+// Utils.
+import { getLanguage } from '_utils';
 
 // Styles.
 import styles from './chartLegend.scss';
@@ -160,7 +164,16 @@ export default class HowDayChart extends Component {
     howData.map((item) => {
       const { date, value } = item;
       // Label.
-      chartProps.chart.data.labels.push(date);
+      const language = getLanguage();
+      let dateFormat;
+      if (language === 'ru') {
+        dateFormat = 'DD.MM';
+      }
+      else {
+        dateFormat = 'MM.DD';
+      }
+      const formatedDate = moment(date).format(dateFormat);
+      chartProps.chart.data.labels.push(formatedDate);
       // Value.
       chartProps.chart.data.datasets[1].data.push(value);
       if (maxValue < value) {

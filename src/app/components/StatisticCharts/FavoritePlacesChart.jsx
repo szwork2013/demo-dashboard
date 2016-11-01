@@ -8,6 +8,9 @@ import { autobind } from 'core-decorators';
 // Components.
 import ChartElement from '_components/ChartElement';
 
+// Utils.
+import { getLanguage } from '_utils';
+
 // Styles.
 import styles from './chartLegend.scss';
 
@@ -199,7 +202,16 @@ export default class FavoritePlacesChart extends Component {
     favoritePlacesData.map((item) => {
       const { date, home, sport, work } = item;
       // Label.
-      chartProps.chart.data.labels.push(date);
+      const language = getLanguage();
+      let dateFormat;
+      if (language === 'ru') {
+        dateFormat = 'DD.MM';
+      }
+      else {
+        dateFormat = 'MM.DD';
+      }
+      const formatedDate = moment(date).format(dateFormat);
+      chartProps.chart.data.labels.push(formatedDate);
       // Value.
       chartProps.chart.data.datasets[1].data.push(home);
       chartProps.chart.data.datasets[2].data.push(work);
