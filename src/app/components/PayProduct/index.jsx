@@ -121,10 +121,10 @@ export default class PayProduct extends Component {
     else if (profile.isFetched) {
       if (profile.profile.is_paid) {
         if (product.type === PAY_PRODUCT_PRODUCT) {
-          content = <PayProductPaid onClickProductBegin={onClickProductBegin} />;
+          content = <PayProductPaid onClickProductBegin={onClickProductBegin} product={product} />;
         }
         else if (product.type === PAY_PRODUCT_SUBSCRIPTION) {
-          content = <PayProductPaid onClickProductBegin={onClickProductBegin} />;
+          content = <PayProductPaid onClickProductBegin={onClickProductBegin} product={product} />;
         }
         else {
           content = this.getPayProductContent();

@@ -23,14 +23,15 @@ export default class PayProductPaid extends Component {
   }
 
   getPayProductPaidContent() {
+    const { product } = this.props;
     const footer = this.getFooter();
     const body = (
       <Panel className={styles.payItem} footer={footer}>
         <div className={styles.payItemImg}>
-          <img src={lifescreeningPaid} height={375} width="auto" />
-          <div className={styles.payItemTitle}>{I18n.t('Аналитика')}</div>
+          <img src={product.img} height={375} width="auto" />
+          <div className={styles.payItemTitle}>{product.title}</div>
         </div>
-        <div className={styles.payItemDescription}>Вы получите большой красивый отчёт со всеми выкладками и симпатичными графиками. По этому отчёту вы сможете получить консультацию и задать вопросы вашему диетологу, фитнес-тренеру, неврологу, терапевту и вашему персональному аналитику, чтобы вам все было понятно.</div>
+        <div className={styles.payItemDescription}>{product.description}</div>
       </Panel>
     );
 
@@ -38,11 +39,12 @@ export default class PayProductPaid extends Component {
   }
 
   getFooter() {
+    const { product } = this.props;
     const footer = (
       <Row className={styles.panelFooter}>
         <Col xs={12} md={6} sm={12} className={styles.panelFooterPayInfo}>
-          <div className={styles.payItemMethod}>{I18n.t('Доступные опции')}</div>
-          <div className={styles.payItemPrice}>{I18n.t('Исследуйте образ жизни')}</div>
+          <div className={styles.payItemMethod}>{I18n.t('Если вы')}:</div>
+          <div className={styles.payItemPrice}>{product.if_you}</div>
         </Col>
         <Col xs={12} md={6} sm={12} className={styles.panelFooterPayButtons}>
           <Button onClick={this.onClickProductBegin} className={classnames(styles.payButton, styles.payPaidButton)}>{I18n.t('Приступить')}</Button>

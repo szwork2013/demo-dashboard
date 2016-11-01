@@ -128,4 +128,6 @@ export default {
   'Ссылка на сброс пароля была отправлена на почту': 'Thanks! Please check your email for a link to reset your password',
 
   'Ваш недельный отчет': 'Your weekly report',
+
+  'Если вы': 'If you are',
 };

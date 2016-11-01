@@ -65,7 +65,6 @@ import styles from './styles.scss';
   dispatch => ({
     statisticsActions: bindActionCreators(StatisticsActions, dispatch),
     segmentActions: bindActionCreators(SegmentActions, dispatch),
-    actions: bindActionCreators(StatisticsActions, dispatch),
   })
 )
 @autobind
